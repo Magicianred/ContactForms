@@ -1,0 +1,16 @@
+@model ContactModel
+
+@{
+    ViewBag.Title = "Contact Us";
+}
+
+<h2>Contact Us - MVC</h2>
+
+<form id="contact-form" 
+      method="post" 
+      asp-action="Contact" 
+      asp-controller="Home" role="form">
+
+    @await Html.PartialAsync("_Contact", Model)
+
+</form>

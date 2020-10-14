@@ -1,0 +1,14 @@
+@page "/razor-page/contact"
+@model ContactForms.Pages.ContactPage
+
+@{
+    Layout = "_Layout";
+}
+
+<h2>Contact Us - Razor Page</h2>
+
+<form id="contact-form"
+      asp-page="ContactPage"
+      method="post" role="form">
+    @await Html.PartialAsync("_Contact", Model)
+</form>

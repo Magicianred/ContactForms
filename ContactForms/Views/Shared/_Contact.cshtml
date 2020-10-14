@@ -1,0 +1,58 @@
+@model IContactModel
+
+@if (Model.HasSuccessMessage)
+{
+    <div class="messages">
+        <p class="alert alert-success">
+            @Model.SuccessMessage
+        </p>
+    </div>
+}
+
+<div class="controls">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" type="text" class="form-control" placeholder="Please enter your firstname *"/>
+                <div class="help-block with-errors">
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" type="email" class="form-control" placeholder="Please enter your email *"/>
+                <div class="help-block with-errors">
+                    <span class="text-danger" asp-validation-for="Email"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label asp-for="Subject"></label>
+                <select asp-for="Subject" asp-items="ContactModel.Subjects" class="form-control"></select>
+                <div class="help-block with-errors">
+                    <span class="text-danger" asp-validation-for="Subject"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label asp-for="Message"></label>
+                <textarea asp-for="Message" class="form-control" placeholder="Message for me *" rows="4"></textarea>
+                <div class="help-block with-errors">
+                    <span class="text-danger" asp-validation-for="Message"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <input type="submit" class="btn btn-success btn-send" value="Send message">
+        </div>
+    </div>
+</div>
