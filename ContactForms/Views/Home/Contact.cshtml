@@ -11,6 +11,6 @@
       asp-action="Contact" 
       asp-controller="Home" role="form">
 
-    @await Html.PartialAsync("_Contact", Model)
+    <partial name="_Contact" model="@Model" />
 
 </form>

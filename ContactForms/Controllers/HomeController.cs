@@ -43,11 +43,11 @@ namespace ContactForms.Controllers
             if (ModelState.IsValid)
             {
                 database.Save(model);
-                SuccessMessage = "Thank you for contact us!";
+                SuccessMessage = "Thank you for contacting us!";
                 
-                logger.LogInformation(model.ToString());
+                logger.LogInformation("Contact message submitted: {Message}", model);
                 
-                return RedirectToAction("Contact");
+                return RedirectToAction(nameof(Contact));
             }
 
             return View(model);

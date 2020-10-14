@@ -10,5 +10,5 @@
 <form id="contact-form"
       asp-page="ContactPage"
       method="post" role="form">
-    @await Html.PartialAsync("_Contact", Model)
+    <partial name="_Contact" model="@Model"/>
 </form>
