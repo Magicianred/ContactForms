@@ -21,11 +21,11 @@ namespace ContactForms.Models
 
         public static IEnumerable<SelectListItem> Subjects { get; } 
             = new List<SelectListItem> {
-            new SelectListItem("Please select a subject...", null, true, true),
-            new SelectListItem("Question", "Question"),
-            new SelectListItem("Feedback", "Feedback"),
-            new SelectListItem("Praise", "Praise"),
-            new SelectListItem("Other", "Other"),
+            new ("Please select a subject...", null, true, true),
+            new ("Question", "Question"),
+            new ("Feedback", "Feedback"),
+            new ("Praise", "Praise"),
+            new ("Other", "Other"),
         }.AsReadOnly();
     }
 }
