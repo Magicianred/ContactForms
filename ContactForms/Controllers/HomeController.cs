@@ -19,11 +19,13 @@ namespace ContactForms.Controllers
             this.database = database;
         }
 
+        [HttpGet, Route("", Name = "root")]
         public IActionResult Index()
         {
             return View();
         }
 
+        [HttpGet, Route("privacy")]
         public IActionResult Privacy()
         {
             return View();
@@ -53,6 +55,7 @@ namespace ContactForms.Controllers
             return View(model);
         }
 
+        [HttpGet, Route("error")]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

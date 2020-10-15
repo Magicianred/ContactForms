@@ -34,7 +34,7 @@ namespace ContactForms.Pages
                 
                 logger.LogInformation("Contact message submitted: {Message}", model);
                 
-               return RedirectToPage("ContactPage");
+               return RedirectToPage(nameof(ContactPage));
             }
 
             return Page();
