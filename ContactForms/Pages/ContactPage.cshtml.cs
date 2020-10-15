@@ -22,7 +22,7 @@ namespace ContactForms.Pages
             if (ModelState.IsValid)
             {
                 // map current data to model
-                var model = new ContactModel {
+                ContactModel model = new() {
                     Email = Email,
                     Message = Message,
                     Name = Name,
@@ -30,9 +30,9 @@ namespace ContactForms.Pages
                 };
                 
                 database.Save(model);
-                SuccessMessage = "Thank you for contact us!";
+                SuccessMessage = "Thank you for contacting us!";
                 
-                logger.LogInformation(model.ToString());
+                logger.LogInformation("Contact message submitted: {Message}", model);
                 
                return RedirectToPage("ContactPage");
             }
